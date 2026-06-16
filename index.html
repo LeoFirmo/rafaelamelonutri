@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Rafaela Melo - Nutricionista em Cascais. Consultas de nutrição online e presenciais em Alcabideche. Adapte o plano à sua rotina e não o contrário.">
+    <meta name="keywords"
+        content="Nutricionista, Cascais, Alcabideche, Nutrição, Consultas Online, Emagrecimento, Rafaela Melo, Dieta Saudável, Portugal">
+    <meta name="author" content="Rafaela Melo">
+    <title>Rafaela Melo - Nutrição | Consultas Presenciais e Online</title>
+
+    <!-- Google Fonts (Mantido para o resto do site e como fallback) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#f97316', // Tangerina
+                            dark: '#2d3748',
+                            light: '#fdfbf7', // Fundo bege claro
+                            purple: '#6b21a8' // Roxo detalhe
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Importação da Fonte Brittany Signature */
+        @font-face {
+            font-family: 'Brittany Signature';
+            src: url('./BrittanySignature.ttf') format('truetype'),
+                /* Coloque o arquivo na mesma pasta */
+                url('./BrittanySignature.woff') format('woff'),
+                url('./BrittanySignature.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #fdfbf7;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #f97316;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ea580c;
+        }
+
+        @keyframes pulse-whatsapp {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .whatsapp-btn {
+            animation: pulse-whatsapp 2s infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-brand-light text-brand-dark antialiased font-sans flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <header id="navbar"
+        class="fixed w-full top-0 z-40 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer h-full py-2" onclick="window.scrollTo(0,0)">
+                    <!-- Imagem da Laranja -->
+                    <img src="./logo-laranja2.png" alt="Logotipo Laranja"
+                        class="h-12 sm:h-16 w-auto object-contain relative z-0">
+
+                    <!-- Texto do Logo via Código -->
+                    <div class="flex flex-col justify-center mt-1 items-end relative z-10 -ml-4 sm:-ml-6">
+                        <span style="font-family: 'Brittany Signature', 'Great Vibes', cursive;"
+                            class="text-4xl sm:text-[3rem] text-[#ea580c] leading-[0.8] mb-1 flex items-baseline">
+                            Rafaela &nbsp;<span
+                                style="font-family: 'Alex Brush', cursive; font-size: 1.25em; margin-right: -2px; transform: translateY(2px);">M</span>elo
+                        </span>
+                        <span
+                            class="font-sans text-[0.60rem] sm:text-[0.65rem] tracking-[0.3em] text-[#fc9868] font-medium mt-0.5 mr-1 sm:mr-2">NUTRICIONISTA</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#sobre" class="text-gray-700 hover:text-brand-orange font-medium transition-colors">Sobre
+                        Mim</a>
+                    <a href="#consultas"
+                        class="text-gray-700 hover:text-brand-orange font-medium transition-colors">Consultas</a>
+                    <a href="#testemunhos"
+                        class="text-gray-700 hover:text-brand-orange font-medium transition-colors">Testemunhos</a>
+                    <a href="#contactos"
+                        class="text-gray-700 hover:text-brand-orange font-medium transition-colors">Contactos</a>
+                </nav>
+
+                <!-- Desktop CTA -->
+                <div class="hidden md:flex">
+                    <a href="https://wa.me/351963319205" target="_blank"
+                        class="bg-brand-orange hover:bg-orange-600 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Agendar Consulta
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-brand-orange focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#sobre"
+                    class="mobile-link block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 rounded-md">Sobre
+                    Mim</a>
+                <a href="#consultas"
+                    class="mobile-link block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 rounded-md">Consultas</a>
+                <a href="#testemunhos"
+                    class="mobile-link block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 rounded-md">Testemunhos</a>
+                <a href="#contactos"
+                    class="mobile-link block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 rounded-md">Contactos</a>
+                <a href="https://wa.me/351963319205" target="_blank"
+                    class="mt-4 block text-center bg-brand-orange text-white px-3 py-3 rounded-md font-medium">
+                    <i class="fa-brands fa-whatsapp mr-2"></i> Agendar Agora
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-24">
+
+        <!-- Hero Section (Nova versão com Foco em Autoridade) -->
+        <section id="inicio"
+            class="relative pt-20 pb-20 lg:pt-32 lg:pb-28 bg-brand-light overflow-hidden min-h-[90vh] flex items-center">
+            <!-- Elementos decorativos de fundo -->
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-orange/10 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-brand-purple/10 blur-3xl">
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+
+                    <!-- Texto da Esquerda -->
+                    <div class="w-full lg:w-1/2 pt-10 lg:pt-0">
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-brand-orange font-medium text-sm mb-6 border border-orange-100 shadow-sm">
+                            <i class="fa-solid fa-award text-brand-orange text-lg"></i> Nutrição Clínica & Estilo de
+                            Vida
+                        </div>
+
+                        <h1
+                            class="text-4xl md:text-5xl lg:text-[3.5rem] font-serif font-bold text-gray-900 leading-tight mb-6">
+                            Adapte o plano à sua rotina, <br /><span
+                                class="text-brand-orange italic relative inline-block">não o contrário.<svg
+                                    class="absolute w-full h-3 -bottom-1 left-0 text-brand-orange/30"
+                                    viewBox="0 0 100 10" preserveAspectRatio="none">
+                                    <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="4"
+                                        fill="transparent"></path>
+                                </svg></span>
+                        </h1>
+
+                        <p class="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed max-w-xl font-light">
+                            Esqueça as dietas malucas e o terrorismo nutricional. Um acompanhamento <strong
+                                class="font-medium text-brand-orange">organizado, humano e totalmente adaptado a
+                                si</strong>, para alcançar os seus resultados com saúde.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="https://wa.me/351963319205" target="_blank"
+                                class="bg-brand-orange text-white text-center px-8 py-4 rounded-full text-lg font-medium hover:bg-orange-600 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group">
+                                <i class="fa-brands fa-whatsapp text-xl group-hover:scale-110 transition-transform"></i>
+                                Agendar Consulta
+                            </a>
+                            <a href="#sobre"
+                                class="bg-white text-gray-800 border border-gray-200 text-center px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-50 transition-all">
+                                Conhecer a Nutri
+                            </a>
+                        </div>
+
+                        <!-- Trust indicators -->
+                        <div
+                            class="mt-10 flex items-center gap-4 text-sm font-medium text-gray-600 bg-white/70 inline-block px-5 py-3 rounded-xl border border-gray-100 shadow-sm backdrop-blur-sm">
+                            <div class="flex text-yellow-400 text-base">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="border-l border-gray-300 pl-4">Avaliação <strong>5.0</strong> no Google</span>
+                        </div>
+                    </div>
+
+                    <!-- Imagem de Autoridade da Direita -->
+                    <div class="w-full lg:w-1/2 relative flex justify-center lg:justify-end mt-8 lg:mt-0">
+                        <!-- Círculo de fundo para destaque -->
+                        <div
+                            class="absolute inset-0 bg-brand-orange/5 rounded-full transform scale-95 translate-x-4 translate-y-4">
+                        </div>
+
+                        <!-- Imagem da Nutricionista (Ajustada para o formato portrait/vertical) -->
+                        <img src="banner.png" alt="Dra. Rafaela Melo - Nutricionista"
+                            class="relative z-10 w-[85%] max-w-md lg:max-w-lg rounded-[2rem] shadow-2xl object-cover border-8 border-white h-[450px] sm:h-[500px] lg:h-[600px]">
+
+                        <!-- Badge Flutuante de Autoridade -->
+                        <div class="absolute bottom-10 -left-6 lg:left-0 z-20 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4 border border-gray-100 animate-bounce"
+                            style="animation-duration: 3s;">
+                            <div
+                                class="bg-orange-50 w-12 h-12 rounded-full flex items-center justify-center text-brand-orange text-xl">
+                                <i class="fa-solid fa-heart-circle-check"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-900 text-sm">Foco em</p>
+                                <p class="text-xs text-gray-500 font-medium">Emagrecimento de forma leve e saudável</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filosofia/Quotes Section -->
+        <section class="py-12 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="p-6">
+                        <div
+                            class="w-16 h-16 mx-auto bg-orange-50 rounded-full flex items-center justify-center mb-4 text-brand-orange text-2xl">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-semibold mb-2">Equilíbrio</h3>
+                        <p class="text-gray-600">Permita-se ter momentos pontuais. Eles também integram uma alimentação
+                            saudável.</p>
+                    </div>
+                    <div class="p-6">
+                        <div
+                            class="w-16 h-16 mx-auto bg-orange-50 rounded-full flex items-center justify-center mb-4 text-brand-orange text-2xl">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-semibold mb-2">Humanização</h3>
+                        <p class="text-gray-600">Um processo feito em equipa. Não está sozinho(a) nos momentos menos
+                            bons, nem nos de maior progresso.</p>
+                    </div>
+                    <div class="p-6">
+                        <div
+                            class="w-16 h-16 mx-auto bg-orange-50 rounded-full flex items-center justify-center mb-4 text-brand-orange text-2xl">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-semibold mb-2">Flexibilidade</h3>
+                        <p class="text-gray-600">Planos alimentares reais, adaptados ao seu dia a dia, gostos e
+                            necessidades específicas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Mim Section -->
+        <section id="sobre" class="py-20 bg-brand-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="w-full lg:w-1/2 relative">
+                        <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative z-10">
+                            <!-- Imagem da Nutricionista -->
+                            <div class="w-full h-full bg-cover bg-center"
+                                style="background-image: url('https://lh3.googleusercontent.com/gps-cs-s/APNQkAFTVdqYy1SLb_F3IkmWMV-FKG-YAQiXCFyHlQtow_ItDRQeFeRbsmB19-8n8q1XSuzIy3Ea70lloGJcIsovyFI31JxTCgmcbBtUdySqCKbt7IwP7RwE1PGB4rykblEmwfkjeYrztw=w1000-h1200');">
+                            </div>
+                        </div>
+                        <!-- Decoração -->
+                        <div
+                            class="absolute -bottom-6 -left-6 w-48 h-48 bg-orange-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob">
+                        </div>
+                        <div
+                            class="absolute -top-6 -right-6 w-48 h-48 bg-purple-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob animation-delay-2000">
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-1/2">
+                        <h2 class="text-brand-orange font-semibold tracking-wider uppercase text-sm mb-2">Muito Prazer,
+                            sou a</h2>
+                        <h3 class="text-3xl sm:text-4xl font-serif font-bold text-gray-900 mb-6">Dra. Rafaela Melo</h3>
+
+                        <div class="space-y-4 text-gray-700 text-lg leading-relaxed">
+                            <p>
+                                Sou Nutricionista apaixonada por descomplicar a alimentação. Acredito que o caminho para
+                                uma vida mais saudável não deve ser feito de restrições extremas, mas sim de
+                                conhecimento, equilíbrio e boas escolhas.
+                            </p>
+                            <p>
+                                O meu objetivo é ajudá-lo(a) a alcançar os seus resultados de forma leve, adaptando o
+                                plano à sua realidade e não o inverso. Nas minhas consultas, prezo por uma abordagem
+                                humana, empática e muito prática (sou fã de boas <i>meal preps</i>!).
+                            </p>
+                            <ul class="mt-6 space-y-2">
+                                <li class="flex items-center text-gray-800">
+                                    <i class="fa-solid fa-check text-brand-orange mr-3"></i> Cédula Profissional (ERS):
+                                    E167591
+                                </li>
+                                <li class="flex items-center text-gray-800">
+                                    <i class="fa-solid fa-check text-brand-orange mr-3"></i> Atendimento focado no
+                                    paciente
+                                </li>
+                                <li class="flex items-center text-gray-800">
+                                    <i class="fa-solid fa-check text-brand-orange mr-3"></i> Resultados com saúde e sem
+                                    terrorismo nutricional
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consultas/Serviços Section -->
+        <section id="consultas" class="py-20 bg-white border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-gray-900 mb-4">Formatos de Consulta</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-12 text-lg">
+                    Escolha a modalidade que melhor se adapta à sua rotina. O acompanhamento e a dedicação são
+                    exatamente os mesmos.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Presencial -->
+                    <div
+                        class="bg-brand-light rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+                        <div
+                            class="absolute top-0 right-0 w-24 h-24 bg-orange-100 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110 z-0">
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-brand-orange text-2xl mb-6 shadow-sm">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold text-gray-900 mb-3 text-left">Consulta Presencial
+                            </h3>
+                            <p class="text-gray-600 text-left mb-6">
+                                Atendimento no consultório em Cascais. Ideal para quem prefere o contacto direto e a
+                                avaliação física presencial com bioimpedância.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500 mb-6 bg-white p-3 rounded-lg">
+                                <i class="fa-solid fa-location-dot text-brand-orange mr-2"></i>
+                                Alcabideche, Cascais (C.P. 5089N)
+                            </div>
+                            <a href="https://wa.me/351963319205?text=Olá! Gostaria de agendar uma consulta presencial."
+                                target="_blank"
+                                class="block w-full py-3 px-4 border-2 border-brand-orange text-brand-orange rounded-xl font-medium hover:bg-brand-orange hover:text-white transition-colors">
+                                Agendar Presencial
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Online -->
+                    <div
+                        class="bg-brand-light rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+                        <div
+                            class="absolute top-0 right-0 w-24 h-24 bg-purple-100 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110 z-0">
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-brand-purple text-2xl mb-6 shadow-sm">
+                                <i class="fa-solid fa-laptop-medical"></i>
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold text-gray-900 mb-3 text-left">Consulta Online</h3>
+                            <p class="text-gray-600 text-left mb-6">
+                                Acompanhamento de excelência à distância de um clique. Poupe tempo em deslocações e seja
+                                acompanhado(a) de qualquer parte do mundo.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500 mb-6 bg-white p-3 rounded-lg">
+                                <i class="fa-solid fa-video text-brand-purple mr-2"></i>
+                                Via Videoconferência
+                            </div>
+                            <a href="https://wa.me/351963319205?text=Olá! Gostaria de agendar uma consulta online."
+                                target="_blank"
+                                class="block w-full py-3 px-4 border-2 border-brand-purple text-brand-purple rounded-xl font-medium hover:bg-brand-purple hover:text-white transition-colors">
+                                Agendar Online
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testemunhos Section -->
+        <section id="testemunhos" class="py-20 bg-brand-orange text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="flex justify-center mb-4">
+                    <div class="flex text-yellow-300 text-2xl">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold mb-4">Classificação de 5.0 Estrelas</h2>
+                <p class="text-orange-100 mb-12">Mais de 70 avaliações no Google de pacientes reais e satisfeitos.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                    <!-- Review 1 -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg text-gray-800 flex flex-col justify-between">
+                        <div>
+                            <i class="fa-solid fa-quote-left text-orange-200 text-3xl mb-4"></i>
+                            <p class="text-gray-600 italic mb-6">"Organizada, despachada e, sobretudo, humana. Uma
+                                excelente nutricionista que me tem ajudado no processo de me tornar mais saudável.
+                                Faz-me sentir sempre que é um trabalho de equipa e que não estou sozinha no processo...
+                                Muito obrigada, Rafaela! :)"</p>
+                        </div>
+                        <div class="flex items-center border-t border-gray-100 pt-4 mt-auto">
+                            <div
+                                class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center text-brand-orange font-bold mr-3">
+                                I</div>
+                            <div>
+                                <h4 class="font-bold">Inês Campos</h4>
+                                <div class="flex text-yellow-400 text-xs">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg text-gray-800 flex flex-col justify-between">
+                        <div>
+                            <i class="fa-solid fa-quote-left text-orange-200 text-3xl mb-4"></i>
+                            <p class="text-gray-600 italic mb-6">"A Dra. Rafaela é uma profissional incrível! Em poucas
+                                consultas, já tenho alcançado resultados muito mais rápidos do que esperava e, acima de
+                                tudo, de uma forma muito leve. É sempre muito simpática, atenciosa e disposta a adaptar
+                                o plano..."</p>
+                        </div>
+                        <div class="flex items-center border-t border-gray-100 pt-4 mt-auto">
+                            <div
+                                class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center text-brand-orange font-bold mr-3">
+                                L</div>
+                            <div>
+                                <h4 class="font-bold">Laís Santos</h4>
+                                <div class="flex text-yellow-400 text-xs">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg text-gray-800 flex flex-col justify-between">
+                        <div>
+                            <i class="fa-solid fa-quote-left text-orange-200 text-3xl mb-4"></i>
+                            <p class="text-gray-600 italic mb-6">"Torna-se fácil fazer uma crítica positiva quando os
+                                profissionais são de excelência. Este é um desses casos, a Dra.Rafaela além de um ser
+                                humano com imensa empatia..."</p>
+                        </div>
+                        <div class="flex items-center border-t border-gray-100 pt-4 mt-auto">
+                            <div
+                                class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center text-brand-orange font-bold mr-3">
+                                A</div>
+                            <div>
+                                <h4 class="font-bold">Alexandra Silva</h4>
+                                <div class="flex text-yellow-400 text-xs">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location & Contact Section -->
+        <section id="contactos" class="relative py-20 overflow-hidden bg-brand-dark"
+            style="background-image: url('./background3.png')">
+
+            <!-- Fundo Roxo com Tangerinas rotacionado (-90 graus para ficar deitado), com dimensões ajustadas para evitar zoom excessivo -->
+            <!-- <div class="absolute top-1/2 left-1/2 w-[200vh] h-[200vw] md:w-[150vh] md:h-[100vw] lg:w-[120vh] lg:h-[100vw] -translate-x-1/2 -translate-y-1/2 bg-cover bg-center -rotate-90 opacity-90"
+                style="background-image: url('https://lh3.googleusercontent.com/gps-cs-s/APNQkAGynV0mRYYUIeBY8pJRb2A2hgYrXRUdYYbNTx0fjDthjyDzqlsrynSOg-LWo3pCRH_XY_HT3iOVInO0HtJ0H9VApc7IBNLtik354_Vprk6CXT5vnu_zcvCeceLSkf0g2UOuGXc-BWIwYsLh=w1900-h1200-k-no');">
+            </div> -->
+            <!-- style="background-image: url('./background3.png');background-size:contain; -->
+
+            <!-- Overlay para destacar o conteúdo, mantendo a textura da imagem de fundo -->
+            <div class="absolute inset-0 bg-brand-purple/40 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-black/30"></div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Infos -->
+                    <div class="bg-white/95 backdrop-blur-md rounded-3xl p-8 sm:p-10 shadow-2xl border border-white/20">
+                        <h2 class="text-3xl font-serif font-bold text-gray-900 mb-8">Contactos & Localização</h2>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div
+                                    class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-orange shadow-sm shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold text-gray-900">Morada (Consultório)</h4>
+                                    <p class="text-gray-600">Rua Manuel Francisco n°75, Loja 1<br>2645-558, Alcabideche,
+                                        Cascais<br>Portugal</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div
+                                    class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-orange shadow-sm shrink-0">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold text-gray-900">Horário de Funcionamento</h4>
+                                    <p class="text-gray-600">Segunda a Sexta-feira: 09:00 – 19:30<br>Sábado e Domingo:
+                                        Encerrado</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div
+                                    class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-green-500 shadow-sm shrink-0">
+                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold text-gray-900">Telemóvel / WhatsApp</h4>
+                                    <!-- <p class="text-gray-600">+351 963 319 205</p> -->
+                                    <a href="https://wa.me/351963319205" target="_blank"
+                                        class="text-brand-orange font-medium hover:underline inline-block mt-1">Enviar
+                                        mensagem agora &rarr;</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div
+                                    class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-pink-600 shadow-sm shrink-0">
+                                    <i class="fa-brands fa-instagram text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold text-gray-900">Instagram</h4>
+                                    <p class="text-gray-600">@nutricionista_rafaelamelo</p>
+                                    <a href="https://www.instagram.com/nutricionista_rafaelamelo/" target="_blank"
+                                        class="text-brand-orange font-medium hover:underline inline-block mt-1">Visitar
+                                        perfil &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map -->
+                    <div
+                        class="h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 bg-white/50 backdrop-blur-sm">
+                        <iframe
+                            src="https://maps.google.com/maps?q=Rua%20Manuel%20Francisco%2075%20Loja%201%2C%202645-558%20Alcabideche%2C%20Portugal&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-gray-300 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
+
+                <div>
+                    <span
+                        class="font-serif text-2xl font-bold text-white flex items-center justify-center md:justify-start gap-2 mb-2">
+                        Rafaela Melo
+                    </span>
+                    <p class="text-sm">Nutrição &copy; 2026. Todos os direitos reservados.</p>
+                    <p class="text-xs text-gray-500 mt-1">C.P - 5089N | ERS - E167591</p>
+                </div>
+
+                <div class="flex space-x-4">
+                    <a href="https://www.instagram.com/nutricionista_rafaelamelo/" target="_blank"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-orange hover:text-white transition-colors"
+                        aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/351963319205" target="_blank"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-500 hover:text-white transition-colors"
+                        aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/351963319205" target="_blank" aria-label="Fale comigo pelo WhatsApp"
+        class="fixed bottom-6 right-6 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:scale-110 transition-transform duration-300 z-50 group whatsapp-btn">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <!-- Tooltip -->
+        <span
+            class="absolute right-20 bg-white text-gray-800 text-sm font-medium px-3 py-1.5 rounded-lg shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            Fale com a Nutri
+        </span>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-sm', 'bg-white/90');
+                navbar.classList.add('bg-white');
+            } else {
+                navbar.classList.remove('shadow-md', 'bg-white');
+                navbar.classList.add('shadow-sm', 'bg-white/90');
+            }
+        });
+    </script>
+</body>
+
+</html>
